@@ -6,6 +6,11 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme {
+  /* CHURCH BRAND COLORS */
+  --color-primary: #7c2d12;    /* Warm Terracotta/Earth Red */
+  --color-secondary: #134e4a;  /* Deep Forest Green */
+  --color-dark: #1c1917;       /* Soft Stone Black */
+  
   --color-inherit: inherit;
   --color-current: currentColor;
   --color-transparent: transparent;
@@ -341,12 +346,8 @@
   The default border color has changed to `currentcolor` in Tailwind CSS v4,
   so we've added these compatibility styles to make sure everything still
   looks the same as it did with Tailwind CSS v3.
-
-  If we ever want to remove these styles, we need to add an explicit border
-  color utility to any element that depends on these defaults.
 */
 @layer base {
-
   *,
   ::after,
   ::before,
@@ -385,7 +386,7 @@ body {
 }
 
 .sticky-menu .signUpBtn {
-  @apply bg-primary hover:bg-dark text-white hover:text-white;
+  @apply bg-primary hover:bg-orange-900 text-white hover:text-white;
 }
 
 .navbarTogglerActive>span:nth-child(1) {
