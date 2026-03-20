@@ -69,6 +69,7 @@ const GalleryPage = () => {
                   src={image.src} 
                   alt={image.title} 
                   fill 
+                  unoptimized={true} // <-- Added this to fix 400 error
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   className="object-cover transition-transform duration-500 group-hover:scale-110"
                 />
@@ -88,7 +89,11 @@ const GalleryPage = () => {
             index={index}
             open={index >= 0}
             close={() => setIndex(-1)}
-            slides={filteredImages.map((img) => ({ src: img.src }))}
+            // Added unoptimized to the lightbox images as well
+            slides={filteredImages.map((img) => ({ 
+              src: img.src,
+              imageProps: { unoptimized: true } 
+            }))}
           />
         </div>
       </section>
